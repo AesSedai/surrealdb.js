@@ -30,6 +30,7 @@
   "license": "MIT",
   "dependencies": {
     "nanoid": "^4.0.0",
+    "node-polyfill-webpack-plugin": "^2.0.1",
     "ws": "^8.8.1"
   },
   "devDependencies": {

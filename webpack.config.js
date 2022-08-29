@@ -1,4 +1,5 @@
 import webpack from 'webpack';
+import NodePolyfillPlugin from 'node-polyfill-webpack-plugin';
 
 export default [
 	{
@@ -20,7 +21,8 @@ export default [
 			new webpack.NormalModuleReplacementPlugin(
 				/..\/websocket\/index.js$/,
 				'/src/websocket/index.web.js',
-			)
+			),
+            new NodePolyfillPlugin()
 		],
 		module: {
 			rules: [{
@@ -37,22 +39,7 @@ export default [
 					}
 				}
 			}]
-		},
-        resolve: {
-            fallback: {
-              "crypto": false,
-              "crypto-browserify": false,
-              "fs": false,
-              "http": false,
-              "https": false,
-              "net": false,
-              "path": false,
-              "stream": false,
-              "tls": false,
-              "url": false,
-              "zlib": false
-            }
-          }
+		}
 	},
 	{
 		target: 'node',
