@@ -37,7 +37,22 @@ export default [
 					}
 				}
 			}]
-		}
+		},
+        resolve: {
+            fallback: {
+              "crypto": false,
+              "crypto-browserify": false,
+              "fs": false,
+              "http": false,
+              "https": false,
+              "net": false,
+              "path": false,
+              "stream": false,
+              "tls": false,
+              "url": false,
+              "zlib": false
+            }
+          }
 	},
 	{
 		target: 'node',
